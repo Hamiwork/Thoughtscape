@@ -2,6 +2,16 @@
 
 从一个问题进入关键词网络，沿观点、关系与条件形成自己的理解。
 
+## 🌟 演示 Demo 入口
+
+### [🌐 Live Demo · 在线体验 Thoughtscape](https://hamiwork.github.io/Thoughtscape/)
+
+无需安装、无需登录、无需 API Key。打开后选择一个演示问题，即可探索关键词、切换立场、检查关系并修改判断。
+
+[本地演示入口](#local-demo) · [下载完整源码 ZIP](https://github.com/Hamiwork/Thoughtscape/raw/refs/heads/main/Thoughtscape-GitHub-ready.zip) · [现场演示路线](#demo-tour) · [接入自己的 AI（可选）](#ai-connection)
+
+> 交互式产品原型 · 五个预置议题 · 演示假设，待核实。预置地图不调用 AI，不产生 API token 费用；自定义问题需自行接入 AI 服务。
+
 ## 当前版本：多议题演示，默认不接入 AI
 
 用户可以在首页点击议题，或输入「远程办公」「AI 写作」「交通」等关键词匹配演示地图。未收录的问题会说明边界，不会把其他地图伪装成新问题的分析。所有预置内容在本机直接加载，不消耗任何 AI API token。
@@ -16,9 +26,15 @@
 
 每张地图都有独立的概念、候选观点、立场名称、关系语义、成立条件和不确定性。新议题复用同一套画布与交互，并非只替换标题。原有暖纸、酒红、编辑式关键词网络风格保留。
 
-## 运行
+<a id="local-demo"></a>
 
-桌面项目双击 **启动 Thoughtscape.command**，访问 http://127.0.0.1:5173/ 。源码包不包含依赖，其他电脑需要 Node.js 22.12+：
+## 本地演示入口与运行
+
+已有完整项目时，可双击 **启动 Thoughtscape.command**。启动后打开 [本地 Demo · http://127.0.0.1:5173/](http://127.0.0.1:5173/)。该地址仅在自己的电脑已启动服务时可用；直接体验请使用上方 Live Demo。
+
+从 GitHub 获取项目时，请下载上方的 **完整源码 ZIP**，解压后进入其中的 `Thoughtscape` 文件夹。当前仓库通过源码包保留 `src/`、`server/`、`tests/` 等完整目录；如果下载的是整个仓库，也需要先解压其中的 `Thoughtscape-GitHub-ready.zip`。
+
+源码包不包含依赖，需要 Node.js 22.12+。在解压得到的项目目录执行：
 
 ```sh
 pnpm install
@@ -42,6 +58,8 @@ THOUGHTSCAPE_BASE_PATH=/thoughtscape/ pnpm preview
 
 然后访问 `http://127.0.0.1:4173/thoughtscape/`。本地正常开发仍使用 `pnpm dev`，无需设置这些构建参数。
 
+<a id="demo-tour"></a>
+
 ## 现场演示路径
 
 1. 首页选一个问题，或输入主题关键词后点击「进入演示地图」。
@@ -61,6 +79,8 @@ THOUGHTSCAPE_BASE_PATH=/thoughtscape/ pnpm preview
 AI 客服沿用 6 份明确标记的构造情景，可演示证据和来源追溯。新增四个议题没有核实的外部来源，因此来源数为 0，并明确提示没有已核实证据。没有编造真实机构、作者、论文、统计数据、网址或原文引文。不同立场不等于必然冲突，关系解释始终包含适用条件和不确定性。
 
 关系、立场、节点拖动和探索历史仅保存在当前页面会话。刷新后恢复预置内容。
+
+<a id="ai-connection"></a>
 
 ## 可选 AI 接口，供使用者自行接入
 
